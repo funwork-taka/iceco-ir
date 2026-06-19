@@ -576,8 +576,9 @@ div:has(> .btn-list) { margin-bottom: 64px !important; }
 }
 .menu-toggle-btn .toggle-icon { font-size: 12px; transition: transform 0.2s; }
 .menu-toggle-btn[aria-expanded="true"] .toggle-icon { transform: rotate(45deg); }
-.menu-toggle-body { display: none; padding-left: 8px; }
+.menu-toggle-body { display: none; padding-left: 8px; border: none; }
 .menu-toggle-body.open { display: block; }
+.menu-toggle-body li { border: none; }
 .menu-toggle-body li a { font-size: 12px; padding: 4px 10px; }
 .ir-main-content { flex: 1; min-width: 0; }
 
