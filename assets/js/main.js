@@ -79,6 +79,11 @@
   });
 
   /* ===== Tab component ===== */
+  var tabMoreBtn = document.getElementById('tab-more-btn');
+  var tabMoreMap = [
+    { href: 'irnews/',  text: '一覧を見る' },
+    { href: 'calendar/', text: 'カレンダーを見る' }
+  ];
   document.querySelectorAll('.tab-nav').forEach(function (nav) {
     nav.querySelectorAll('.tab-btn').forEach(function (btn, i) {
       btn.addEventListener('click', function () {
@@ -88,6 +93,10 @@
         btn.classList.add('active');
         var panels = wrap.querySelectorAll('.tab-panel');
         if (panels[i]) { panels[i].classList.add('active'); }
+        if (tabMoreBtn && tabMoreMap[i]) {
+          tabMoreBtn.href = tabMoreMap[i].href;
+          tabMoreBtn.textContent = tabMoreMap[i].text;
+        }
       });
     });
   });
