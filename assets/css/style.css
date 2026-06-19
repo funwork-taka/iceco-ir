@@ -583,6 +583,10 @@ div:has(> .btn-list) { margin-bottom: 64px !important; }
 .menu-toggle-nolink { display: block; font-size: 12px; padding: 4px 10px; color: var(--site-text); }
 .ir-main-content { flex: 1; min-width: 0; }
 
+/* ===== IR News filter ===== */
+.irnews-filter { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.irnews-select { font-size: 12px; padding: 6px 10px; border: 1px solid #ccc; border-radius: 2px; }
+
 /* ===== FAQ ===== */
 .faq-list { margin: 0; }
 .faq-list dt {

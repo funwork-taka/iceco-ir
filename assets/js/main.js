@@ -41,6 +41,26 @@
     });
   });
 
+  /* ===== IR News filter ===== */
+  (function () {
+    var yearSel = document.getElementById('irnews-year');
+    var catSel  = document.getElementById('irnews-cat');
+    if (!yearSel || !catSel) return;
+    function filterNews() {
+      var year = yearSel.value;
+      var cat  = catSel.value;
+      document.querySelectorAll('.irnews-list li').forEach(function (li) {
+        var date    = (li.querySelector('.list-date') || {}).textContent || '';
+        var catText = (li.querySelector('.list-cat')  || {}).textContent || '';
+        var showYear = !year || date.startsWith(year);
+        var showCat  = !cat  || catText.trim() === cat;
+        li.style.display = (showYear && showCat) ? '' : 'none';
+      });
+    }
+    yearSel.addEventListener('change', filterNews);
+    catSel.addEventListener('change', filterNews);
+  }());
+
   /* ===== SP Collapsibles ===== */
   document.querySelectorAll('.sp-coll-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
