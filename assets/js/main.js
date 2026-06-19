@@ -1,3 +1,16 @@
+/* ===== Password protection ===== */
+(function () {
+  var KEY = 'ir_auth', PASS = 'iceco1234';
+  if (sessionStorage.getItem(KEY) !== '1') {
+    var input = prompt('パスワードを入力してください');
+    if (input !== PASS) {
+      document.body.innerHTML = '<p style="padding:40px;font-family:sans-serif;">アクセスが拒否されました。</p>';
+      return;
+    }
+    sessionStorage.setItem(KEY, '1');
+  }
+}());
+
 (function () {
   'use strict';
 
