@@ -567,6 +567,18 @@ div:has(> .btn-list) { margin-bottom: 64px !important; }
 .ir-side-menu ul li a:hover { text-decoration: underline; }
 .menu-heading { display: block; background: #e8eef5; padding: 6px 10px; font-weight: bold; color: #003366; }
 .menu-parent  { display: block; padding: 6px 10px; font-weight: bold; color: var(--site-text); }
+.menu-toggle-btn {
+  display: flex; justify-content: space-between; align-items: center;
+  width: 100%; padding: 6px 10px;
+  background: none; border: none; cursor: pointer;
+  font: inherit; font-weight: bold; color: var(--site-text);
+  text-align: left;
+}
+.menu-toggle-btn .toggle-icon { font-size: 12px; transition: transform 0.2s; }
+.menu-toggle-btn[aria-expanded="true"] .toggle-icon { transform: rotate(45deg); }
+.menu-toggle-body { display: none; padding-left: 8px; }
+.menu-toggle-body.open { display: block; }
+.menu-toggle-body li a { font-size: 12px; padding: 4px 10px; }
 .ir-main-content { flex: 1; min-width: 0; }
 
 /* ===== Shareholders section ===== */

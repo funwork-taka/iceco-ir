@@ -32,6 +32,15 @@
     });
   }
 
+  /* ===== Sidebar sub-toggles (all viewports) ===== */
+  document.querySelectorAll('.menu-toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var body = btn.nextElementSibling;
+      var isOpen = body.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
   /* ===== SP Collapsibles ===== */
   document.querySelectorAll('.sp-coll-btn').forEach(function (btn) {
     btn.addEventListener('click', function () {
