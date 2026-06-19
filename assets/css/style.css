@@ -580,6 +580,7 @@ div:has(> .btn-list) { margin-bottom: 64px !important; }
 .menu-toggle-body.open { display: block; border: 0px; }
 .menu-toggle-body li { border: none; }
 .menu-toggle-body li a { font-size: 12px; padding: 4px 10px; }
+.menu-toggle-nolink { display: block; font-size: 12px; padding: 4px 10px; color: var(--site-text); }
 .ir-main-content { flex: 1; min-width: 0; }
 
 /* ===== Shareholders section ===== */
