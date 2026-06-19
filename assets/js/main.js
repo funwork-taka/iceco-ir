@@ -43,22 +43,29 @@
 
   /* ===== IR News filter ===== */
   (function () {
-    var yearSel = document.getElementById('irnews-year');
-    var catSel  = document.getElementById('irnews-cat');
-    if (!yearSel || !catSel) return;
+    var yearSel  = document.getElementById('irnews-year');
+    var catBtns  = document.querySelectorAll('.irnews-cat-btn');
+    if (!yearSel && !catBtns.length) return;
+    var currentCat = '';
     function filterNews() {
-      var year = yearSel.value;
-      var cat  = catSel.value;
+      var year = yearSel ? yearSel.value : '';
       document.querySelectorAll('.irnews-list li').forEach(function (li) {
         var date    = (li.querySelector('.list-date') || {}).textContent || '';
         var catText = (li.querySelector('.list-cat')  || {}).textContent || '';
         var showYear = !year || date.startsWith(year);
-        var showCat  = !cat  || catText.trim() === cat;
+        var showCat  = !currentCat || catText.trim() === currentCat;
         li.style.display = (showYear && showCat) ? '' : 'none';
       });
     }
-    yearSel.addEventListener('change', filterNews);
-    catSel.addEventListener('change', filterNews);
+    catBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        catBtns.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        currentCat = btn.getAttribute('data-cat');
+        filterNews();
+      });
+    });
+    if (yearSel) yearSel.addEventListener('change', filterNews);
   }());
 
   /* ===== SP Collapsibles ===== */

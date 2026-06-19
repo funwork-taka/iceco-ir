@@ -584,8 +584,29 @@ div:has(> .btn-list) { margin-bottom: 64px !important; }
 .ir-main-content { flex: 1; min-width: 0; }
 
 /* ===== IR News filter ===== */
-.irnews-filter { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.irnews-filter { margin-bottom: 16px; }
 .irnews-select { font-size: 12px; padding: 6px 10px; border: 1px solid #ccc; border-radius: 2px; }
+.irnews-cat-btns { display: flex; flex-wrap: wrap; gap: 0; margin-bottom: 24px; }
+.irnews-cat-btn {
+  padding: 8px 20px; font-size: 13px; cursor: pointer;
+  background: #fff; border: 1px solid #ccc; border-right: none;
+  font-family: inherit; transition: background 0.15s, color 0.15s;
+}
+.irnews-cat-btns .irnews-cat-btn:last-child { border-right: 1px solid #ccc; }
+.irnews-cat-btn.active { background: #555; color: #fff; border-color: #555; }
+.irnews-cat-btn.cat-tekiji  { color: #0097a7; border-color: #0097a7; }
+.irnews-cat-btn.cat-tekiji.active  { background: #0097a7; color: #fff; }
+.irnews-cat-btn.cat-kessan  { color: #e64a19; border-color: #e64a19; }
+.irnews-cat-btn.cat-kessan.active  { background: #e64a19; color: #fff; }
+.irnews-cat-btn.cat-houtei  { color: #388e3c; border-color: #388e3c; }
+.irnews-cat-btn.cat-houtei.active  { background: #388e3c; color: #fff; }
+.irnews-cat-btn.cat-ir      { color: #f57c00; border-color: #f57c00; }
+.irnews-cat-btn.cat-ir.active      { background: #f57c00; color: #fff; }
+.irnews-cat-btn.cat-oshirase { color: #f9a825; border-color: #f9a825; }
+.irnews-cat-btn.cat-oshirase.active { background: #f9a825; color: #fff; }
+@media (max-width: 480px) {
+  .irnews-cat-btn { padding: 7px 12px; font-size: 12px; }
+}
 
 /* ===== FAQ ===== */
 .faq-list { margin: 0; }

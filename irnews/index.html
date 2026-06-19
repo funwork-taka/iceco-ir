@@ -50,16 +50,20 @@
 
     <div class="irnews-filter">
       <select id="irnews-year" class="irnews-select">
-        <option value="">年度で絞り込む</option>
-        <option value="2025" selected>2025年度</option>
+        <option value="">年を選択してください</option>
+        <option value="2025">2025年度</option>
         <option value="2024">2024年度</option>
         <option value="2023">2023年度</option>
       </select>
-      <select id="irnews-cat" class="irnews-select">
-        <option value="">カテゴリで絞り込む</option>
-        <option value="適時開示">適時開示</option>
-        <option value="IR資料">IR資料</option>
-      </select>
+    </div>
+
+    <div class="irnews-cat-btns">
+      <button class="irnews-cat-btn active" data-cat="">全て</button>
+      <button class="irnews-cat-btn cat-tekiji" data-cat="適時開示">適時開示</button>
+      <button class="irnews-cat-btn cat-kessan" data-cat="決算短信">決算短信</button>
+      <button class="irnews-cat-btn cat-houtei" data-cat="法定開示">法定開示</button>
+      <button class="irnews-cat-btn cat-ir" data-cat="IR資料">IR資料</button>
+      <button class="irnews-cat-btn cat-oshirase" data-cat="お知らせ">お知らせ</button>
     </div>
 
     <ul class="ir-list irnews-list">
